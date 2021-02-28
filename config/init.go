@@ -21,12 +21,12 @@ func GetConfig() *Config {
 	return &Config{
 		DB: &DBConfig{
 			Dialect:  "mysql",
-			Host:     "kendaraan-mysql",
+			Host:     "spj-mysql",
 			Port:     "33061",
 			Username: "root",
 			Password: "admin321",
 			Charset:  "utf8",
-			Database:  "kendaraan",
+			Database:  "spj",
 		},
 	}
 }

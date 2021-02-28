@@ -2,8 +2,8 @@ package app
 
 import (
 	"github.com/digikarya/helper"
-	"github.com/digikarya/kendaraan/app/handler"
-	"github.com/digikarya/kendaraan/config"
+	"github.com/digikarya/spj/app/handler"
+	"github.com/digikarya/spj/config"
 	"github.com/gorilla/mux"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -45,7 +45,9 @@ func (a *SPJ) Initialize(config *config.Config,route *mux.Router) {
 func (a *SPJ) setRouters() {
 	//// Routing for handling the projectsUserFind
 	//
-	//a.Post("/layout", a.guard(handler.LayoutCreate))
+	a.Post("/pengecekan", a.guard(handler.PengecekanCreate))
+	a.Get("/pengecekan", a.guard(handler.PengecekanAll))
+	a.Post("/spj/cek/kendaraan", a.guard(handler.AvailKendaraan))
 	//a.Get("/layout/all", a.guard(handler.LayoutAll))
 	//a.Get("/layout/{hashid}", a.guard(handler.LayoutFind))
 	//a.Put("/layout/{hashid}", a.guard(handler.LayoutUpdate))
